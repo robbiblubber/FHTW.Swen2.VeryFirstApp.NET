@@ -1,0 +1,24 @@
+﻿<Window x:Class="FHTW.Swen2.VeryFirstApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FHTW.Swen2.VeryFirstApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="278" Width="495">
+    <Window.DataContext>
+        <local:GreetingViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid HorizontalAlignment="Center" Height="47" Margin="0,10,0,0" VerticalAlignment="Top" Width="475">
+            <Label Content="Who to greet:" HorizontalAlignment="Left" Height="38" Margin="16,0,0,0" VerticalAlignment="Center" Width="96"/>
+            <TextBox HorizontalAlignment="Left" Height="22" TextWrapping="Wrap" VerticalAlignment="Center" Width="216" Margin="112,0,0,0" Text="{Binding Name}"/>
+        </Grid>
+        <Label HorizontalAlignment="Right" Margin="0,101,41,0" VerticalAlignment="Top" FontSize="36" Width="378" Content="{Binding GreetingText, Mode=OneWay}"/>
+        <Button Content="Greet Now!" HorizontalAlignment="Left" Height="22" Margin="377,23,0,0" VerticalAlignment="Top" Width="91" Command="{Binding GreetingExecutionCommand}"/>
+
+    </Grid>
+</Window>
